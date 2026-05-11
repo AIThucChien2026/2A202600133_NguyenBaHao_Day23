@@ -16,7 +16,7 @@ from .state import AgentState, ApprovalDecision, Route, make_event
 
 logger = logging.getLogger(__name__)
 
-# ── LLM Configuration ─────────────────────────────────────────────────────────
+# ── LLM Configuration ────────────────────────────────────────────────────────
 
 LLM_MAX_RETRIES = 3        # Max retry attempts for LLM calls
 LLM_TIMEOUT_SEC = 30   # Seconds before giving up on one attempt
@@ -215,7 +215,10 @@ def _extract_text(response: Any) -> str:  # noqa: ANN401
         return content.strip()
     if isinstance(content, list):
         # Gemini may return a list of content parts
-        parts = [p.get("text", "") if isinstance(p, dict) else str(p) for p in content]
+        parts = [
+            p.get("text", "") if isinstance(p, dict) else str(p)
+            for p in content
+        ]
         return "".join(parts).strip()
     return str(content).strip()
 
