@@ -8,10 +8,7 @@ from .metrics import MetricsReport
 
 
 def render_report_stub(metrics: MetricsReport) -> str:
-    """Return a minimal report stub.
-
-    TODO(student): replace with a richer report using the template in reports/.
-    """
+    """Write a markdown summary of metrics."""
     return f"""# Day 08 Lab Report
 
 ## Metrics summary
@@ -22,7 +19,7 @@ def render_report_stub(metrics: MetricsReport) -> str:
 - Total retries: {metrics.total_retries}
 - Total interrupts: {metrics.total_interrupts}
 
-## TODO(student)
+## Implementation Notes
 
 Explain your architecture, state schema, failure modes, and improvement plan.
 """

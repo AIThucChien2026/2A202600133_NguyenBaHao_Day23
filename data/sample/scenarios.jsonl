@@ -5,3 +5,8 @@
 {"id":"S05_error","query":"Timeout failure while processing request","expected_route":"error","requires_approval":false,"should_retry":true,"tags":["retry"]}
 {"id":"S06_delete","query":"Delete customer account after support verification","expected_route":"risky","requires_approval":true,"should_retry":false,"tags":["hitl","destructive"]}
 {"id":"S07_dead_letter","query":"System failure cannot recover after multiple attempts","expected_route":"error","requires_approval":false,"should_retry":true,"max_attempts":1,"tags":["dead_letter","retry"]}
+{"id":"S08_hitl_revoke","query":"Revoke API key and notify the account owner by email","expected_route":"risky","requires_approval":true,"should_retry":false,"tags":["hitl","risky","access-control"]}
+{"id":"S09_hitl_cancel","query":"Cancel subscription and issue a full refund immediately","expected_route":"risky","requires_approval":true,"should_retry":false,"tags":["hitl","risky","billing"]}
+{"id":"S10_tool_track","query":"Track the shipment for order 67890 and give me the current location","expected_route":"tool","requires_approval":false,"should_retry":false,"tags":["tool","logistics"]}
+{"id":"S11_retry_crash","query":"Service crashed and error occurred when processing payment","expected_route":"error","requires_approval":false,"should_retry":true,"tags":["retry","payment"]}
+{"id":"S12_missing_vague","query":"Help me with it please","expected_route":"missing_info","requires_approval":false,"should_retry":false,"tags":["clarification","edge-case"]}
