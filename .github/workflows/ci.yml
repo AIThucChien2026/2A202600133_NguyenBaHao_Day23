@@ -6,6 +6,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      GEMINI_API: ${{ secrets.GEMINI_API }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
