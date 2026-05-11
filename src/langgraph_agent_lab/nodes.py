@@ -41,9 +41,9 @@ def get_llm(temperature: float = 0) -> Any:  # noqa: ANN401
     )
 
 
-def llm_invoke_with_retry(  # noqa: ANN401
-    llm: Any, prompt: str, *, max_retries: int = LLM_MAX_RETRIES,
-) -> Any:
+def llm_invoke_with_retry(
+    llm: Any, prompt: str, *, max_retries: int = LLM_MAX_RETRIES,  # noqa: ANN401
+) -> Any:  # noqa: ANN401
     """Invoke an LLM with exponential-backoff retry on transient errors.
 
     Args:

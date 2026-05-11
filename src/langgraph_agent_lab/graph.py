@@ -5,6 +5,7 @@ that check schema/metrics can run even if students are still debugging graph wir
 """
 
 from __future__ import annotations
+
 from typing import Any
 
 from .nodes import (
